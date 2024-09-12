@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRRS", "MRRS\MRRS.csproj", "{AFE5C128-FE71-4119-9D70-70F84D9A025A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFE5C128-FE71-4119-9D70-70F84D9A025A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE5C128-FE71-4119-9D70-70F84D9A025A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE5C128-FE71-4119-9D70-70F84D9A025A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE5C128-FE71-4119-9D70-70F84D9A025A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3C5DC94-42D9-46F1-845B-A5FCEC14D5BB}
+	EndGlobalSection
+EndGlobal
