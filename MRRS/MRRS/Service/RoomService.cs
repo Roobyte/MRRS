@@ -5,11 +5,11 @@ public class RoomService
     private readonly ReservationDbContext _dbContext;
     public RoomService(ReservationDbContext dbContext)=>
         _dbContext = dbContext;
-    public async Task Create(Guid id, int capacity, string name)
+    public async Task Create( int capacity, string name)
     {
         var roomEntity = new Room
         {
-            Id = id,
+            Id = Guid.NewGuid(),
             Name = name,
             Capacity = capacity
         };
@@ -37,14 +37,12 @@ public class RoomService
     public async Task<List<Room>> GetAll()
     {
         return await _dbContext.Rooms
-            .AsNoTracking()
             .OrderBy(r => r.Name)
             .ToListAsync();
     }
     public async Task<Room?> GetById(Guid Id)
     {
         return await _dbContext.Rooms
-            .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == Id);
     }
 }

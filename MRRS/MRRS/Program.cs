@@ -17,7 +17,7 @@ builder.Services.AddDbContext<ReservationDbContext>(
         options.UseSqlite(configuration.GetConnectionString("ConnString"));
     });
 builder.Services.AddScoped<RoomResService>();
-//builder.Services.AddScoped<RoomService>();
+builder.Services.AddScoped<RoomService>();
 
 var app = builder.Build();
 

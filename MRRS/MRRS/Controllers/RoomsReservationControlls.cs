@@ -66,7 +66,7 @@ namespace MRRS.Controllers
             return NoContent();
         }
         [HttpPut("UpdateReservation{id}")]
-        public async Task<IActionResult> UpdateReservation(Guid id,
+        public async Task<ActionResult> UpdateReservation(Guid id,
              [FromQuery] DateTime beginT,
              [FromQuery] DateTime endT,
              [FromQuery] Guid roomId,
@@ -83,7 +83,7 @@ namespace MRRS.Controllers
             return NoContent();
         }
         [HttpDelete("DeleteReservation{id}")]
-        public async Task<IActionResult> DeleteReservation(Guid id)
+        public async Task<ActionResult> DeleteReservation(Guid id)
         {
             await _roomResService.Delete(id);
             return NoContent();
