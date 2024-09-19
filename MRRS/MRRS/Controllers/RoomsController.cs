@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using MRRS;
+﻿using Microsoft.AspNetCore.Mvc;
 using MRRS.Model;
 using MRRS.Service;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MRRS.Controllers
 {
@@ -26,6 +18,7 @@ namespace MRRS.Controllers
         {
             return await _roomService.GetAll();
         }
+      
         [HttpGet("GetRoomsById{id}")]
         public async Task<ActionResult<Room?>> GetRoomsById(Guid id)
         {
@@ -38,6 +31,11 @@ namespace MRRS.Controllers
             {
                 return NotFound(e.Message);
             }
+        }
+        [HttpGet("GetScheduleByRoom{id}")]
+        public async Task<ActionResult<List<RoomReservation>>> GetScheduleByRoom(Guid id)
+        {
+            return await _roomService.GetScheduleByRoom(id);
         }
         [HttpPost("CreateRoom")]
         public async Task<ActionResult> CreateRoom(

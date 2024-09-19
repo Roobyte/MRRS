@@ -48,22 +48,22 @@ public class RoomResService
     {
         var roomRes = _dbContext.RoomsRes
             .FirstOrDefault(rr => rr.Id == id);
-        //if (roomRes == null)
-        //{
-        //    throw new Exception("Бронь с заданным идентификатором не найдена.");
-        //}
-        //var roomExists =  _dbContext.Rooms
-        //        .FirstOrDefaultAsync(r => r.Id.ToString() == roomId.ToString());
-        //if (roomExists == null)
-        //{
-        //    throw new Exception("Комната с указанным идентификатором не найдена.");
-        //}
-        //var userExists =  _dbContext.Users
-        //    .FirstOrDefaultAsync(u => u.Id.ToString() == userId.ToString());
-        //if (userExists == null)
-        //{
-        //    throw new Exception("Пользователь с указанным идентификатором не найден.");
-        //}   
+        if (roomRes == null)
+        {
+            throw new Exception("Бронь с заданным идентификатором не найдена.");
+        }
+        var roomExists = _dbContext.Rooms
+                .FirstOrDefaultAsync(r => r.Id == roomId);
+        if (roomExists == null)
+        {
+            throw new Exception("Комната с указанным идентификатором не найдена.");
+        }
+        var userExists = _dbContext.Users
+            .FirstOrDefaultAsync(u => u.Id == userId);
+        if (userExists == null)
+        {
+            throw new Exception("Пользователь с указанным идентификатором не найден.");
+        }
         roomRes.BeginRes = beginRes;
         roomRes.EndRes = endRes;
         roomRes.UserId = userId;
@@ -75,7 +75,7 @@ public class RoomResService
     public async Task Delete(Guid id)
     {
 
-        var idEx = await _dbContext.RoomsRes.AnyAsync(rr => rr.Id== id);
+        var idEx = await _dbContext.RoomsRes.AnyAsync(rr => rr.Id == id);
         if (!idEx)
         {
             throw new Exception("Бронь с заданным идентификатором не найдена.");

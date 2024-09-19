@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MRRS.Model;
-using System.Configuration;
 namespace MRRS;
 public class ReservationDbContext : DbContext
 {

@@ -1,10 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MRRS.Model;
 namespace MRRS.Service;
 public class RoomService
 {
     private readonly ReservationDbContext _dbContext;
     public RoomService(ReservationDbContext dbContext)=>
         _dbContext = dbContext;
+    public async Task<List<RoomReservation>> GetScheduleByRoom(Guid id)
+    {
+        if(id == Guid.Empty)
+            throw new ArgumentNullException("id");
+       return await _dbContext.RoomsRes.Where(x=> x.RoomId == id).ToListAsync();
+    }
     public async Task Create( int capacity, string name)
     {
         var roomEntity = new Room

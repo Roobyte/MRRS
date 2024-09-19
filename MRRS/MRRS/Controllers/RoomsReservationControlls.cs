@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MRRS.Model;
 using MRRS.Service;
 namespace MRRS.Controllers
