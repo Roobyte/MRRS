@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MRRS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dc121248b2848081c0d0d9d22d8c0e367021464")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34881db7f84c36bcae86b1282635de485df8ab53")]
 [assembly: System.Reflection.AssemblyProductAttribute("MRRS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MRRS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

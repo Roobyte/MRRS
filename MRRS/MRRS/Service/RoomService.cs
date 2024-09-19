@@ -12,7 +12,7 @@ public class RoomService
             throw new ArgumentNullException("id");
        return await _dbContext.RoomsRes.Where(x=> x.RoomId == id).ToListAsync();
     }
-    public async Task Create( int capacity, string name)
+    public async Task Create(int capacity, string name)
     {
         var roomEntity = new Room
         {

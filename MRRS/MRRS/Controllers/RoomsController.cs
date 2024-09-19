@@ -16,7 +16,14 @@ namespace MRRS.Controllers
         [HttpGet("GetAllRooms")]
         public async Task<ActionResult<List<Room>>> GetAllRooms()
         {
-            return await _roomService.GetAll();
+            try
+            {
+                return await _roomService.GetAll();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
         }
       
         [HttpGet("GetRoomsById{id}")]
